@@ -22,10 +22,10 @@
         body { font-size: 16px; }
 
         .button {
-            opacity: 0.6;
             background-color: #6C757D;
+            opacity: 0.6;
             transition: 0.3s;
-            border: none;
+            border: 1px solid #ddd;
             color: #fefefe;
             text-align: center;
         }
@@ -86,13 +86,6 @@
         // When the user clicks on button (x), close the modal
         buttonClose.onclick = function () {
             modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
         }
     </script>
 </body>
