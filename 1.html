@@ -62,7 +62,7 @@
         @media (min-width: 900px) {
             .grid {
                 grid-template-columns: 400px repeat(2, 1fr);
-                grid-template-rows: 100px repeat(3, minmax(calc(400px / 3), 1fr)) 100px;
+                grid-template-rows: 100px repeat(3, minmax(calc(calc(400px / 3) - 9.99px), 1fr)) 100px;
             }
 
             header { grid-column: 1 / 4; grid-row: 1 / 2;}
@@ -79,7 +79,7 @@
         @media (min-width: 1200px) {
             .grid {
                 grid-template-columns: 400px repeat(3, 1fr);
-                grid-template-rows: 100px repeat(2, minmax(200px, 1fr)) 100px;
+                grid-template-rows: 100px repeat(2, minmax(192.5px, 1fr)) 100px;
             }
 
             header { grid-column: 1 / 5; grid-row: 1 / 2;}
