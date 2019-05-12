@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie 2</title>
+</head>
+<body>
+    <button class="button button1">Open Modal</button>
+
+    <div class="modal">
+
+        <div class="modal-content">
+            <a href="3.html">Zadanie 3</a>
+            <button class="button button2">&times;</button>
+        </div>
+
+    </div>
+
+    <style>
+
+        body { font-size: 16px; }
+
+        .button {
+            opacity: 0.6;
+            background-color: #6C757D;
+            transition: 0.3s;
+            border: none;
+            color: #fefefe;
+            text-align: center;
+        }
+
+        .button:hover {
+            opacity: 1;
+        }
+
+        /* The open button */
+        .button1 {
+            display: block;
+            margin: 10% auto;
+            height: 10%;
+            width: 10%;
+        }
+
+        /* The close button */
+        .button2 { float: right; }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 20%;
+        }
+
+    </style>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementsByClassName('modal')[0];
+
+        // Get the button that opens the modal
+        var buttonOpen = document.getElementsByClassName("button")[0];
+
+        // Get the button that closes the modal
+        var buttonClose = document.getElementsByClassName("button")[1];
+
+        // When the user clicks on the button, open the modal
+        buttonOpen.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on button (x), close the modal
+        buttonClose.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

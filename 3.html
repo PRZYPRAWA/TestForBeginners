@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanie 3</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Filter...">
+    <button id="submit" class="button" onclick="filterList()">Submit</button>
+
+    <ul id="unordered-list">
+        <li><a href="#">Walmart</a></li>
+        <li><a href="#">State Grid</a></li>
+        <li><a href="#">Sinopec Group</a></li>
+        <li><a href="#">China National Petroleum</a></li>
+        <li><a href="#">Royal Dutch Shell</a></li>
+        <li><a href="#">Toyota Motor</a></li>
+        <li><a href="#">Volkswagen</a></li>
+        <li><a href="#">BP</a></li>
+        <li><a href="#">Exxon Mobil</a></li>
+        <li><a href="#">Berkshire Hathaway</a></li>
+    </ul>
+
+    <style>
+        .button {
+            opacity: 0.6;
+            background-color: #6C757D;
+            transition: 0.3s;
+            border: none;
+            color: #fefefe;
+            text-align: center;
+            width: 20%;
+            font-size: 16px;
+            padding: 12px 20px 12px 15px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+        }
+
+        .button:hover {
+            opacity: 1;
+        }
+
+        #input {
+            float: left;
+            width: 80%;
+            font-size: 16px;
+            padding: 12px 20px 12px 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #unordered-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #unordered-list li a {
+            border: 1px solid #ddd;
+            margin-top: -1px;
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+        }
+
+        #unordered-list li a:hover:not(.header) {
+            background-color: #eee;
+        }
+    </style>
+
+    <script>
+        // Declare variables
+        var filter, ul, li, a, i, txtValue;
+        var input = document.getElementById("input");
+
+        // Adding possibility to press enter and search
+        input.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("submit").click();
+                }
+            });
+
+        function filterList() {
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("unordered-list");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
